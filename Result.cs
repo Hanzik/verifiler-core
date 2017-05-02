@@ -31,14 +31,16 @@ namespace VerifilerCore {
 		public void SetFilesValid(List<string> filenames) {
 			foreach (var filename in filenames) {
 				invalidFilesList.Remove(filename);
-				validFilesList.Add(filename);
+				if (!validFilesList.Contains(filename)) {
+					validFilesList.Add(filename);
+				}
 			}
 		}
 
 		public void SetFilesInvalid(List<string> filenames, int code) {
 			foreach (var filename in filenames) {
 				validFilesList.Remove(filename);
-				invalidFilesList.Add(filename, code);
+				invalidFilesList[filename] = code;
 			}
 		}
 

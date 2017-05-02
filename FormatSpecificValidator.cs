@@ -11,11 +11,11 @@ namespace VerifilerCore {
 	/// multiple extensions should this be needed.
 	/// </summary>
 	public class FormatSpecificValidator : Step {
-
-		protected HashSet<string> RelevantExtensions = new HashSet<string>();
+		
 		protected int FilesVerified = 0;
 
 		public override int ErrorCode { get; set; } = Error.Generic;
+		public HashSet<string> RelevantExtensions = new HashSet<string>();
 
 		private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
